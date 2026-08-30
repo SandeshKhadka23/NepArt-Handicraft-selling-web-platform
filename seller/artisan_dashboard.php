@@ -1,9 +1,9 @@
 <?php
 session_start();
-include "../db.php";
+include "../includes/db.php";
 
 if (!isset($_SESSION["user_id"]) || $_SESSION["role"] != "artisan") {
-    header("Location: ../login.php");
+    header("Location: ../auth/login.php");
     exit();
 }
 
@@ -32,7 +32,7 @@ $result = $stmt->get_result();
         <div class="nav-links">
              <a href="view_orders.php" class="nav-button">Manage Orders</a>
             <a href="add_product.php" class="nav-button"><i class="fas fa-plus"></i> Add Product</a>
-            <a href="../logout.php" class="nav-button"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <a href="../auth/logout.php" class="nav-button"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
     </nav>
 
@@ -54,7 +54,7 @@ $result = $stmt->get_result();
                 <div class="product-card">
                     <div class="product-image-container">
                         <?php if ($row['image']) { ?>
-                            <img src="../uploads/products/<?php echo htmlspecialchars($row['image']); ?>" alt="Product Image" class="product-image">
+                            <img src="../assets/dynamic_pictures/products/<?php echo htmlspecialchars($row['image']); ?>" alt="Product Image" class="product-image">
                         <?php } else { ?>
                             <div class="no-image">No image available</div>
                         <?php } ?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["user_id"]) || $_SESSION["role"] != "buyer") {
-    header("Location:../login.php");
+    header("Location: ../auth/login.php");
     exit();
 }
 
@@ -55,7 +55,7 @@ $result_categories = $conn->query($sql_categories);
 <nav class="main-nav">
     <div class="nav-container">
         <div class="nav-left">
-            <img src="../artisan_folder/download.png" alt="Logo" class="logo">
+            <img src="../assets/static_pictures/artisan/download.png" alt="Logo" class="logo">
             <span class="brand-name">NepArt Creations</span>
         </div>
         <div class="nav-right">
@@ -79,7 +79,7 @@ $result_categories = $conn->query($sql_categories);
                 <span class="cart-badge" id="cart-count">0</span>
             </a>
             <a href="track_order.php" class="nav-link">Track Orders</a>
-            <a href="../logout.php" class="nav-link">Logout</a>
+            <a href="../auth/logout.php" class="nav-link">Logout</a>
         </div>
     </div>
 </nav>
@@ -100,7 +100,7 @@ $result_categories = $conn->query($sql_categories);
         if ($result_products->num_rows > 0) {
             while($row = $result_products->fetch_assoc()) {
                 echo '<div class="product-item" data-category-id="' . $row["category_id"] . '">';
-                echo '<img src="../uploads/products/' . htmlspecialchars($row['image']) . '" alt="' . htmlspecialchars($row['product_name']) . '" class="product-image">';
+                echo '<img src="../assets/dynamic_pictures/products/' . htmlspecialchars($row['image']) . '" alt="' . htmlspecialchars($row['product_name']) . '" class="product-image">';
                 echo '<h2>' . htmlspecialchars($row["product_name"]) . '</h2>';
                 
                 echo '<p class="price">Price: Rs. ' . number_format($row["price"], 2) . '</p>';

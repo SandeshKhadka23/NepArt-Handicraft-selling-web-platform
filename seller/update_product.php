@@ -1,10 +1,10 @@
 <?php 
 session_start(); 
-include "../db.php"; 
+include "../includes/db.php"; 
 
 // Check if user is logged in and is an artisan
 if (!isset($_SESSION["user_id"]) || $_SESSION["role"] != "artisan") {
-    header("Location: ../login.php");
+    header("Location: ../auth/login.php");
     exit();
 }
 

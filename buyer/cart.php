@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION["user_id"]) || $_SESSION["role"] != "buyer") {
-    header("Location:../login.php");
+    header("Location: ../auth/login.php");
     exit();
 }
 
@@ -158,7 +158,7 @@ $result_cart = $stmt->get_result();
     <nav class="main-nav">
         <div class="nav-container">
             <div class="nav-left">
-                <img src="../artisan_folder/download.png" alt="Logo" class="logo">
+                <img src="../assets/static_pictures/artisan/download.png" alt="Logo" class="logo">
                 <span class="brand-name">NepArt Creations</span>
             </div>
             <div class="nav-right">
@@ -187,7 +187,7 @@ $result_cart = $stmt->get_result();
                 $total += $subtotal;
                 ?>
                 <div class="cart-item" data-cart-id="<?php echo $row['cart_id']; ?>">
-                    <img src="../uploads/products/<?php echo htmlspecialchars($row['image']); ?>" 
+                    <img src="../assets/dynamic_pictures/products/<?php echo htmlspecialchars($row['image']); ?>" 
                          alt="<?php echo htmlspecialchars($row['product_name']); ?>">
                     
                     <div class="item-details">

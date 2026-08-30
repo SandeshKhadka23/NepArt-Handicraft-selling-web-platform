@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 if (!isset($_SESSION["user_id"]) || $_SESSION["role"] != "buyer") {
-    header("Location:../login.php");
+    header("Location: ../auth/login.php");
     exit();
 }
 $servername = "localhost";
@@ -105,7 +105,7 @@ $result_orders = $stmt->get_result();
     <nav class="main-nav">
         <div class="nav-container">
             <div class="nav-left">
-                <img src="../artisan_folder/download.png" alt="Logo" class="logo">
+                <img src="../assets/static_pictures/artisan/download.png" alt="Logo" class="logo">
                 <span class="brand-name">NepArt Creations</span>
             </div>
             <div class="nav-right">

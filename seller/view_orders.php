@@ -1,9 +1,9 @@
 <?php
 session_start();
-include "../db.php";
+include "../includes/db.php";
 
 if (!isset($_SESSION["user_id"]) || $_SESSION["role"] != "artisan") {
-    header("Location: ../login.php");
+    header("Location: ../auth/login.php");
     exit();
 }
 
@@ -109,7 +109,7 @@ $result = $stmt->get_result();
                         <h4><i class="fas fa-box"></i> Products Ordered</h4>
                         <?php while ($product = $result_products->fetch_assoc()) { ?>
                             <div class="product-item">
-                                <img src="../uploads/products/<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>" class="product-image">
+                                <img src="../assets/dynamic_pictures/products/<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>" class="product-image">
                                 <div class="product-info">
                                     <p><strong>Product:</strong> <?php echo htmlspecialchars($product['product_name']); ?></p>
                                     <p><strong>Quantity:</strong> <?php echo $product['quantity']; ?></p>

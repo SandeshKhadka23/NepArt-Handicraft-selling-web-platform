@@ -152,7 +152,7 @@
 <body>
     <?php 
     session_start(); 
-    include "db.php";
+    include "../includes/db.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = trim($_POST["username"]);
@@ -190,7 +190,7 @@
     <nav class="main-nav">
         <div class="nav-container">
             <div class="nav-left">
-                <img src="artisan_folder/download.png" alt="Logo" class="logo">
+                <img src="../assets/static_pictures/artisan/download.png" alt="Logo" class="logo">
                 <span class="brand-name">NepArt Creations</span>
             </div>
         </div>

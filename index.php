@@ -46,7 +46,7 @@ $result_categories = $conn->query($sql_categories);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NepArt Creations</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="buyer_folder/styleb.css">
+    <link rel="stylesheet" href="assets/css/styleb.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         .about .slider-container .about-content .buynowbttn {
@@ -64,7 +64,7 @@ $result_categories = $conn->query($sql_categories);
 <nav class="main-nav">
     <div class="nav-container">
         <div class="nav-left">
-            <img src="artisan_folder/download.png" alt="Logo" class="logo">
+            <img src="assets/static_pictures/artisan/download.png" alt="Logo" class="logo">
             <span class="brand-name">NepArt Creations</span>
         </div>
         <div class="nav-right">
@@ -86,8 +86,8 @@ $result_categories = $conn->query($sql_categories);
             <a href="#" onclick="showLoginAlert('cart')" class="nav-link cart-link">
                 <i class="fas fa-shopping-cart"></i>
             </a>
-            <a href="login.php" class="nav-link">Login</a>
-            <a href="register.php" class="nav-link">Register</a>
+            <a href="auth/login.php" class="nav-link">Login</a>
+            <a href="auth/register.php" class="nav-link">Register</a>
         </div>
     </div>
 </nav>
@@ -111,7 +111,7 @@ $result_categories = $conn->query($sql_categories);
         <?php if ($result_products->num_rows > 0): ?>
             <?php while ($row = $result_products->fetch_assoc()): ?>
                 <div class="product-item" data-category-id="<?php echo $row['category_id']; ?>">
-                    <img src="uploads/products/<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['product_name']); ?>" class="product-image">
+                    <img src="assets/dynamic_pictures/products/<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['product_name']); ?>" class="product-image">
                     <h2><?php echo htmlspecialchars($row["product_name"]); ?></h2>
                     <p class="price">Price: Rs. <?php echo number_format($row["price"], 2); ?></p>
                     <div class="quantity-selector">
@@ -240,7 +240,7 @@ $result_categories = $conn->query($sql_categories);
     }
 
     function redirectToLogin() {
-        window.location.href = 'login.php';
+        window.location.href = 'auth/login.php';
     }
 
     // Modified showLoginAlert function

@@ -1,10 +1,10 @@
 <?php
 session_start();
-include "../db.php";
+include "../includes/db.php";
 
 // Check if user is logged in and is an artisan
 if (!isset($_SESSION["user_id"]) || $_SESSION["role"] != "artisan") {
-    header("Location: ../login.php");
+    header("Location: ../auth/login.php");
     exit();
 }
 
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $image_name = null;
     if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] === UPLOAD_ERR_OK) {
         // Set the directory for image uploads
-        $upload_dir = "../uploads/products/";
+        $upload_dir = "../assets/dynamic_pictures/products/";
 
         // Create the directory if it doesn't exist
         if (!is_dir($upload_dir)) {

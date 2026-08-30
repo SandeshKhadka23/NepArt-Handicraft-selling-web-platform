@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION["user_id"]) || $_SESSION["role"] != "buyer") {
-    header("Location:../login.php");
+    header("Location: ../auth/login.php");
     exit();
 }
 
@@ -69,13 +69,13 @@ if (isset($_GET['product_id']) && isset($_GET['quantity'])) {
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styleb.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="../assets/css/checkout.css">
 </head>
 <body>
     <nav class="main-nav">
         <div class="nav-container">
             <div class="nav-left">
-                <img src="../artisan_folder/download.png" alt="Logo" class="logo">
+                <img src="../assets/static_pictures/artisan/download.png" alt="Logo" class="logo">
                 <span class="brand-name">NepArt Creations</span>
             </div>
             <div class="nav-right">

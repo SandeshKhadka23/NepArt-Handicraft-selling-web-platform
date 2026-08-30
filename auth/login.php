@@ -142,7 +142,7 @@
 <body>
     <?php
     session_start();
-    include "db.php";
+    include "../includes/db.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = trim($_POST["email"]);
@@ -166,9 +166,9 @@
             $_SESSION["role"] = $user["role"];
 
             if ($_SESSION["role"] == "artisan") {
-                header("Location:artisan_folder\artisan_dashboard.php");
+                header("Location: ../seller/artisan_dashboard.php");
             } else {
-                header("Location: buyer_folder/buyer_dashboard.php");
+                header("Location: ../buyer/buyer_dashboard.php");
             }            
             exit();
         } else {
@@ -180,7 +180,7 @@
     <nav class="main-nav">
         <div class="nav-container">
             <div class="nav-left">
-                <img src="artisan_folder/download.png" alt="Logo" class="logo">
+                <img src="../assets/static_pictures/artisan/download.png" alt="Logo" class="logo">
                 <span class="brand-name">NepArt Creations</span>
             </div>
         </div>
