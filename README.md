@@ -1,4 +1,4 @@
-# 🇳🇵 NepArt
+# NepArt
 
 ### An Online Marketplace for Nepali Handicrafts
 
@@ -318,6 +318,6 @@ This project is intended for educational and learning purposes.
 
 ---
 
-## 🇳🇵 Supporting Nepali Artisans
+## Supporting Nepali Artisans
 
 NepArt aims to promote Nepal's rich culture, creativity, and craftsmanship by providing local artisans with a platform to showcase and sell their handcrafted products online.
